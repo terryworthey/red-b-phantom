@@ -1,6 +1,605 @@
-<!doctype html>
-<meta charset="utf-8">
-<meta http-equiv="refresh" content="0; url=./Red_B_Phantom_Website_FINAL.html">
-<title>Red B Phantom</title>
-<script>location.replace("./Red_B_Phantom_Website_FINAL.html");</script>
-<p>Opening <a href="./Red_B_Phantom_Website_FINAL.html">Red B Phantom</a>…</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>RED B PHANTOM | Gaming & Music</title>
+
+<meta name="description" content="Enter the world of Red B Phantom. Watch gaming clips, catch live streams, discover original beats, and explore instrumental licensing options.">
+
+<style>
+:root {
+  --red: #ff1838;
+  --black: #080808;
+  --panel: #141414;
+  --white: #ffffff;
+  --gray: #b8b8b8;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+header {
+  background: rgba(8,8,8,0.97);
+  border-bottom: 1px solid #292929;
+  padding: 18px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 23px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.logo span {
+  color: var(--red);
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+nav a {
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+nav a:hover {
+  color: var(--red);
+}
+
+.hero {
+  min-height: 540px;
+  padding: 90px 7%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  background:
+    radial-gradient(ellipse at 85% 40%, #510b17 0%, transparent 45%),
+    linear-gradient(135deg, #080808, #17080c 60%, #080808);
+  border-bottom: 2px solid var(--red);
+}
+
+.tag {
+  color: var(--red);
+  font-weight: bold;
+  letter-spacing: 4px;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  font-size: clamp(42px, 9vw, 82px);
+  line-height: 1.05;
+  margin: 20px 0;
+  font-weight: 900;
+}
+
+.hero h1 span {
+  color: var(--red);
+}
+
+.hero p {
+  max-width: 580px;
+  color: var(--gray);
+  margin-bottom: 28px;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 20px;
+  background: var(--red);
+  border: 1px solid var(--red);
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 12px;
+  transition: 0.2s;
+}
+
+.btn:hover {
+  background: white;
+  color: black;
+  border-color: white;
+}
+
+.btn.secondary {
+  background: transparent;
+  border-color: #777;
+}
+
+section {
+  padding: 70px 6%;
+}
+
+.section-heading {
+  margin-bottom: 30px;
+}
+
+.section-heading h2 {
+  font-size: clamp(27px, 5vw, 42px);
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+.section-heading h2 span {
+  color: var(--red);
+}
+
+.section-heading p {
+  color: var(--gray);
+  margin-top: 10px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: var(--panel);
+  border: 1px solid #292929;
+  padding: 25px;
+  transition: 0.2s;
+}
+
+.card:hover {
+  border-color: var(--red);
+  transform: translateY(-3px);
+}
+
+.game-icon {
+  font-size: 38px;
+  margin-bottom: 12px;
+}
+
+.card h3 {
+  font-size: 21px;
+  margin-bottom: 8px;
+}
+
+.card p {
+  color: var(--gray);
+  font-size: 14px;
+  margin-bottom: 18px;
+}
+
+.small-label {
+  color: var(--red);
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.dark-section {
+  background: #0e0e0e;
+  border-top: 1px solid #242424;
+  border-bottom: 1px solid #242424;
+}
+
+.beat-card {
+  background: #151515;
+  border: 1px solid #303030;
+  padding: 22px;
+}
+
+.beat-card h3 {
+  margin-bottom: 5px;
+}
+
+.beat-card p {
+  color: var(--gray);
+  font-size: 13px;
+  margin-bottom: 15px;
+}
+
+.beat-card audio {
+  width: 100%;
+  margin: 10px 0 15px;
+}
+
+.price {
+  font-size: 13px;
+  color: var(--gray);
+  margin: 15px 0;
+}
+
+.license-card {
+  border-top: 3px solid var(--red);
+}
+
+.license-card ul {
+  list-style: none;
+  margin: 15px 0 22px;
+}
+
+.license-card li {
+  color: var(--gray);
+  font-size: 13px;
+  padding: 5px 0;
+}
+
+.license-card li::before {
+  content: "✓ ";
+  color: var(--red);
+  font-weight: bold;
+}
+
+.notice {
+  color: var(--gray);
+  font-size: 12px;
+  margin-top: 25px;
+  padding: 15px;
+  border-left: 3px solid var(--red);
+  background: #111;
+}
+
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.social-links a {
+  background: #171717;
+  border: 1px solid #333;
+  padding: 12px 16px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.social-links a:hover {
+  border-color: var(--red);
+  color: var(--red);
+}
+
+.contact-box {
+  background: linear-gradient(135deg, #20070c, #101010);
+  border: 1px solid #4b111c;
+  padding: 35px;
+}
+
+footer {
+  text-align: center;
+  padding: 28px 15px;
+  background: #050505;
+  border-top: 1px solid #292929;
+  color: var(--gray);
+  font-size: 12px;
+}
+
+footer strong {
+  color: var(--red);
+}
+
+@media (max-width: 600px) {
+  header {
+    justify-content: center;
+  }
+
+  nav {
+    justify-content: center;
+  }
+
+  .hero {
+    padding: 75px 7%;
+    min-height: 480px;
+  }
+
+  section {
+    padding: 55px 6%;
+  }
+
+  .contact-box {
+    padding: 24px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <a class="logo" href="#home">RED B <span>PHANTOM</span></a>
+
+  <nav>
+    <a href="#gaming">Gaming</a>
+    <a href="#clips">Clips</a>
+    <a href="#beats">Beats</a>
+    <a href="#licenses">Licenses</a>
+    <a href="#socials">Follow</a>
+  </nav>
+</header>
+
+<main>
+
+<section class="hero" id="home">
+  <div class="tag">Gaming • Music • Content Creation</div>
+
+  <h1>WELCOME TO<br><span>THE PHANTOM</span><br>ZONE.</h1>
+
+  <p>
+    Welcome to the official home of Red B Phantom.
+    Catch intense gaming moments, watch the latest content,
+    discover original instrumentals, and find the right license
+    for your next song.
+  </p>
+
+  <div class="buttons">
+    <a class="btn" href="https://www.twitch.tv/red_b_phantom" target="_blank" rel="noopener">Watch Live</a>
+
+    <a class="btn secondary" href="#beats">Explore Beats</a>
+  </div>
+</section>
+
+<section id="gaming">
+  <div class="section-heading">
+    <span class="small-label">The Games</span>
+    <h2>ENTER THE <span>BATTLEFIELD</span></h2>
+    <p>Follow the action and see what Red B Phantom is playing.</p>
+  </div>
+
+  <div class="grid">
+
+    <article class="card">
+      <div class="game-icon">🎯</div>
+      <h3>Apex Legends</h3>
+      <p>Squad wipes, clutch plays, intense fights, and battle royale action.</p>
+      <a class="btn" href="https://www.twitch.tv/red_b_phantom" target="_blank" rel="noopener">Watch Gameplay</a>
+    </article>
+
+    <article class="card">
+      <div class="game-icon">💥</div>
+      <h3>Delta Force</h3>
+      <p>Tactical combat, intense firefights, and high-pressure moments.</p>
+      <a class="btn" href="https://www.youtube.com/@redbphantom" target="_blank" rel="noopener">Watch Content</a>
+    </article>
+
+    <article class="card">
+      <div class="game-icon">🛡️</div>
+      <h3>Rainbow Six Siege</h3>
+      <p>Strategic plays, clutch rounds, and competitive action.</p>
+      <a class="btn" href="https://www.youtube.com/@redbphantom" target="_blank" rel="noopener">Watch Content</a>
+    </article>
+
+  </div>
+</section>
+
+<section class="dark-section" id="clips">
+  <div class="section-heading">
+    <span class="small-label">Highlights & Videos</span>
+    <h2>WATCH THE <span>CLIPS</span></h2>
+    <p>Catch the latest gaming highlights and full videos.</p>
+  </div>
+
+  <div class="grid">
+
+    <article class="card">
+      <div class="game-icon">🎬</div>
+      <h3>YouTube Videos</h3>
+      <p>Watch gameplay, stream highlights, and new uploads.</p>
+      <a class="btn" href="https://www.youtube.com/@redbphantom" target="_blank" rel="noopener">Watch YouTube</a>
+    </article>
+
+    <article class="card">
+      <div class="game-icon">📱</div>
+      <h3>TikTok Clips</h3>
+      <p>Short gaming moments, clutch plays, and new content.</p>
+      <a class="btn" href="https://www.tiktok.com/@red_b_phantom" target="_blank" rel="noopener">Watch TikTok</a>
+    </article>
+
+    <article class="card">
+      <div class="game-icon">🔴</div>
+      <h3>Live Streams</h3>
+      <p>Join the stream, support the channel, and be part of the community.</p>
+      <a class="btn" href="https://kick.com/red-b-phantom" target="_blank" rel="noopener">Watch on Kick</a>
+    </article>
+
+  </div>
+
+  <p class="notice">
+    Want your actual clips embedded directly on this page?
+    Add your video embed links when your clips are ready.
+  </p>
+</section>
+
+<section id="beats">
+  <div class="section-heading">
+    <span class="small-label">Original Music Production</span>
+    <h2>THE <span>BEAT STORE</span></h2>
+    <p>Discover instrumentals for your next release. Preview beats and ask about licensing.</p>
+  </div>
+
+  <div class="grid">
+
+    <article class="beat-card">
+      <span class="small-label">Instrumental 01</span>
+      <h3>PHANTOM MODE</h3>
+      <p>Dark trap • Hard-hitting production</p>
+      <audio controls preload="none">
+        Your browser does not support audio playback.
+      </audio>
+      <a class="btn" href="#licenses">License This Beat</a>
+    </article>
+
+    <article class="beat-card">
+      <span class="small-label">Instrumental 02</span>
+      <h3>NO MERCY</h3>
+      <p>Gangsta trap • Heavy 808 energy</p>
+      <audio controls preload="none">
+        Your browser does not support audio playback.
+      </audio>
+      <a class="btn" href="#licenses">License This Beat</a>
+    </article>
+
+    <article class="beat-card">
+      <span class="small-label">Instrumental 03</span>
+      <h3>AFTER DARK</h3>
+      <p>Dark melodic trap • Moody atmosphere</p>
+      <audio controls preload="none">
+        Your browser does not support audio playback.
+      </audio>
+      <a class="btn" href="#licenses">License This Beat</a>
+    </article>
+
+  </div>
+
+  <p class="notice">
+    Beat previews will work once you upload your audio files and connect
+    them to the audio players. These are sample listings, not existing
+    beat files or completed purchases.
+  </p>
+</section>
+
+<section class="dark-section" id="licenses">
+  <div class="section-heading">
+    <span class="small-label">Choose Your Rights</span>
+    <h2>INSTRUMENTAL <span>LICENSES</span></h2>
+    <p>Choose the licensing option that best fits your music project.</p>
+  </div>
+
+  <div class="grid">
+
+    <article class="card license-card">
+      <span class="small-label">Option 01</span>
+      <h3>Non-Exclusive</h3>
+      <p>Use a beat under agreed terms while the producer may license it to other artists.</p>
+
+      <ul>
+        <li>Affordable licensing option</li>
+        <li>Non-exclusive usage rights</li>
+        <li>Usage limits defined by agreement</li>
+        <li>Producer retains ownership</li>
+      </ul>
+
+      <a class="btn" href="mailto:redphantom55@gmail.com?subject=Non-Exclusive%20Beat%20License">Ask About License</a>
+    </article>
+
+    <article class="card license-card">
+      <span class="small-label">Option 02</span>
+      <h3>Exclusive</h3>
+      <p>Request an exclusive license with specific rights and terms agreed in writing.</p>
+
+      <ul>
+        <li>Exclusive rights as agreed</li>
+        <li>Terms negotiated before purchase</li>
+        <li>Existing licenses may still apply</li>
+        <li>Ownership defined by contract</li>
+      </ul>
+
+      <a class="btn" href="mailto:redphantom55@gmail.com?subject=Exclusive%20Beat%20License">Ask About License</a>
+    </article>
+
+    <article class="card license-card">
+      <span class="small-label">Option 03</span>
+      <h3>Buyout</h3>
+      <p>Discuss a negotiated buyout covering the rights specifically described in a written contract.</p>
+
+      <ul>
+        <li>Custom negotiated agreement</li>
+        <li>Rights defined in writing</li>
+        <li>Copyright terms clearly specified</li>
+        <li>Written agreement before payment</li>
+      </ul>
+
+      <a class="btn" href="mailto:redphantom55@gmail.com?subject=Beat%20Buyout%20Inquiry">Request Buyout</a>
+    </article>
+
+  </div>
+
+  <p class="notice">
+    License descriptions are informational, not legal contracts.
+    Final rights, prices, permitted uses, royalties, and restrictions must
+    be established in a written agreement. A buyout does not automatically
+    transfer every copyright or right unless the agreement expressly says so.
+  </p>
+</section>
+
+<section id="socials">
+  <div class="section-heading">
+    <span class="small-label">Join The Community</span>
+    <h2>FOLLOW <span>THE PHANTOM</span></h2>
+    <p>Connect with Red B Phantom across gaming, music, and social media.</p>
+  </div>
+
+  <div class="social-links">
+    <a href="https://www.twitch.tv/red_b_phantom" target="_blank" rel="noopener">TWITCH</a>
+
+    <a href="https://kick.com/red-b-phantom" target="_blank" rel="noopener">KICK</a>
+
+    <a href="https://www.youtube.com/@redbphantom" target="_blank" rel="noopener">YOUTUBE</a>
+
+    <a href="https://www.tiktok.com/@red_b_phantom" target="_blank" rel="noopener">TIKTOK</a>
+
+    <a href="https://www.instagram.com/red_b_phantom/" target="_blank" rel="noopener">INSTAGRAM</a>
+
+    <a href="https://open.spotify.com/artist/3fj9rFU9j6Cv25xRqkfppI" target="_blank" rel="noopener">SPOTIFY</a>
+  </div>
+</section>
+
+<section class="dark-section">
+  <div class="contact-box">
+    <span class="small-label">Business & Music Inquiries</span>
+    <h2>LET'S MAKE <span style="color:#ff1838">SOMETHING HAPPEN.</span></h2>
+
+    <p style="color:#b8b8b8; margin:15px 0 25px;">
+      Interested in licensing an instrumental, discussing a beat,
+      or working with Red B Phantom? Get in touch.
+    </p>
+
+    <a class="btn" href="mailto:redphantom55@gmail.com?subject=Red%20B%20Phantom%20Business%20Inquiry">Contact Red B Phantom</a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p><strong>RED B PHANTOM</strong> | Gaming • Music • Content Creation</p>
+  <p>© <span id="year"></span> Red B Phantom. All rights reserved.</p>
+</footer>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
